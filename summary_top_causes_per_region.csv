@@ -1,0 +1,71 @@
+region,icd_group,count
+Asir,Cardiovascular,5741
+Asir,Other,4576
+Asir,External Causes,2345
+Asir,Neoplasms (Cancer),2285
+Asir,Metabolic / Endocrine,1900
+Bahah,Cardiovascular,1416
+Bahah,Other,856
+Bahah,Neoplasms (Cancer),549
+Bahah,Metabolic / Endocrine,485
+Bahah,Respiratory,387
+Eastern Region,Cardiovascular,10354
+Eastern Region,Other,7838
+Eastern Region,Neoplasms (Cancer),4549
+Eastern Region,Metabolic / Endocrine,3161
+Eastern Region,Respiratory,2864
+Hail,Cardiovascular,1777
+Hail,Other,1286
+Hail,Neoplasms (Cancer),795
+Hail,External Causes,618
+Hail,Metabolic / Endocrine,608
+Jawf,Cardiovascular,1296
+Jawf,Other,957
+Jawf,Metabolic / Endocrine,550
+Jawf,Neoplasms (Cancer),445
+Jawf,External Causes,417
+Jizan,Cardiovascular,4742
+Jizan,Other,2905
+Jizan,Neoplasms (Cancer),1485
+Jizan,External Causes,1287
+Jizan,Metabolic / Endocrine,1055
+Madinah,Cardiovascular,4465
+Madinah,Other,4226
+Madinah,Neoplasms (Cancer),2217
+Madinah,Metabolic / Endocrine,1838
+Madinah,External Causes,1354
+Makkah,Cardiovascular,24018
+Makkah,Other,15330
+Makkah,Neoplasms (Cancer),8533
+Makkah,Respiratory,6077
+Makkah,Metabolic / Endocrine,5657
+Najran,Cardiovascular,1175
+Najran,Other,932
+Najran,External Causes,485
+Najran,Neoplasms (Cancer),475
+Najran,Metabolic / Endocrine,379
+Northern Region,Cardiovascular,804
+Northern Region,Other,530
+Northern Region,Neoplasms (Cancer),313
+Northern Region,External Causes,265
+Northern Region,Respiratory,247
+Qassim,Cardiovascular,3142
+Qassim,Other,2455
+Qassim,Neoplasms (Cancer),1443
+Qassim,Respiratory,1436
+Qassim,External Causes,914
+Riyadh,Cardiovascular,15331
+Riyadh,Other,12572
+Riyadh,Neoplasms (Cancer),7577
+Riyadh,Metabolic / Endocrine,5661
+Riyadh,External Causes,4878
+Tabuk,Cardiovascular,2081
+Tabuk,Other,1316
+Tabuk,External Causes,885
+Tabuk,Neoplasms (Cancer),790
+Tabuk,Metabolic / Endocrine,535
+nan,Cardiovascular,11390
+nan,Other,9859
+nan,External Causes,4358
+nan,Respiratory,3286
+nan,Metabolic / Endocrine,2576

@@ -1,0 +1,29 @@
+region,premature,count
+Asir,Non-Premature (≥70),8221
+Asir,Premature (<70),10350
+Bahah,Non-Premature (≥70),2135
+Bahah,Premature (<70),1899
+Eastern Region,Non-Premature (≥70),10593
+Eastern Region,Premature (<70),20611
+Hail,Non-Premature (≥70),2107
+Hail,Premature (<70),3396
+Jawf,Non-Premature (≥70),1360
+Jawf,Premature (<70),2686
+Jizan,Non-Premature (≥70),4932
+Jizan,Premature (<70),7512
+Madinah,Non-Premature (≥70),5840
+Madinah,Premature (<70),9569
+Makkah,Non-Premature (≥70),23815
+Makkah,Premature (<70),40375
+Najran,Non-Premature (≥70),1557
+Najran,Premature (<70),2248
+Northern Region,Non-Premature (≥70),788
+Northern Region,Premature (<70),1584
+Qassim,Non-Premature (≥70),4030
+Qassim,Premature (<70),6104
+Riyadh,Non-Premature (≥70),17439
+Riyadh,Premature (<70),33187
+Tabuk,Non-Premature (≥70),2047
+Tabuk,Premature (<70),4089
+nan,Non-Premature (≥70),15430
+nan,Premature (<70),17802
