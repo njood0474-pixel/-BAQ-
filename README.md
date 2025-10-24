@@ -10,3 +10,4 @@ streamlit run app.py
 
 ## Add your intro video
 Place your splash video at `assets/intro_baqa.mp4`.
+update layout
