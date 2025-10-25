@@ -1,7 +1,7 @@
 import streamlit as st
 from pathlib import Path
 st.set_page_config(page_title="BAQĀ", page_icon="✨", layout="wide")
-st.markdown(Path("style.css").read_text(), unsafe_allow_html=True)
+st.markdown(Path("styles/style.css").read_text(), unsafe_allow_html=True)
 
 if "entered" not in st.session_state:
     st.session_state.entered = False
