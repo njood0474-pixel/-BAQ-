@@ -1,18 +1,44 @@
-/* ===== Global Theme Colors ===== */
+/* ===== Global Theme Tokens ===== */
+/* Added @import for the font to ensure it's loaded */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 :root {
-  --primary: #19A7B8;        /* الأزرق الفاتح مثل الصورة */
-  --secondary: #0B1C2A;      /* الأزرق الداكن */
+  /* --- Colors --- */
+  --primary: #19A7B8;
+  --primary-dark: #138997;  /* Darker shade for hover/active states */
+  --secondary: #0B1C2A;
+  --secondary-light: #0E2A3C;
   --white: #ffffff;
-  --gray: #e8edf1;
+  --gray-light: #e8edf1;
+  --gray-dark: #555555;     /* Converted hardcoded value to a variable */
   --accent: #E6F7FF;
   --highlight: #2ad4f5;
+
+  /* --- Sizing & Spacing --- */
+  --border-radius: 12px;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+
+  /* --- Transitions & Effects --- */
+  --transition-speed: 0.3s;
+  --shadow-md: 0 8px 24px rgba(15, 37, 54, 0.15);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== App Background ===== */
-[data-testid="stAppViewContainer"] {
-  background: radial-gradient(circle at 50% 30%, var(--secondary), #02111b);
-  color: var(--white);
+/* ===== Base Styles ===== */
+body {
   font-family: 'Poppins', sans-serif;
+}
+
+[data-testid="stAppViewContainer"] {
+  background: radial-gradient(circle at 50% 30%, var(--secondary-light), #02111b);
+  color: var(--white);
+}
+
+h1, h2, h3 {
+  color: var(--white);
+  text-align: center;
+  font-weight: 700;
 }
 
 /* ===== Sidebar ===== */
@@ -22,77 +48,77 @@
   border-right: 2px solid var(--primary);
 }
 
-[data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] p {
+/* Using :is() for a cleaner, more efficient selector */
+[data-testid="stSidebar"] :is(h2, p) {
   color: var(--secondary);
   font-weight: 600;
 }
 
 /* ===== Buttons ===== */
 div.stButton > button {
-  background-color: var(--primary);
+  /* ACCESSIBILITY FIX: Using a darker background for better text contrast */
+  background-color: var(--primary-dark);
   color: var(--white);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border: none;
   font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s ease;
+  font-weight: 600; /* Increased font-weight for readability */
+  padding: 0.75rem 1.5rem;
+  transition: all var(--transition-speed) ease;
 }
 
 div.stButton > button:hover {
   background-color: var(--highlight);
   transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(42, 212, 245, 0.4);
 }
 
-/* ===== Titles ===== */
-h1, h2, h3 {
-  color: var(--white);
-  text-align: center;
-  font-weight: 700;
-}
-
-/* ===== Dashboard Cards ===== */
+/* ===== Dashboard Cards & KPIs ===== */
 .baqa-card {
   border: 1px solid var(--accent);
-  border-radius: 14px;
-  padding: 18px 22px;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
   background-color: var(--white);
-  box-shadow: 0 8px 24px rgba(15, 37, 54, 0.15);
+  box-shadow: var(--shadow-md);
   color: var(--secondary);
+  transition: all var(--transition-speed) ease;
+}
+.baqa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(15, 37, 54, 0.2);
 }
 
-/* ===== KPI Boxes ===== */
 .kpi-big {
   font-weight: 800;
   color: var(--primary);
-  font-size: 30px;
+  font-size: clamp(1.75rem, 4vw, 2.25rem); /* Responsive font size */
 }
 
 .kpi-sub {
-  color: #555;
+  color: var(--gray-dark);
   font-size: 14px;
 }
 
-/* ===== Splash Screen (using static image) ===== */
+/* ===== Splash Screen ===== */
 .baqa-splash {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: radial-gradient(70% 70% at 50% 30%, #0e2a3c, var(--secondary));
+  background: radial-gradient(70% 70% at 50% 30%, var(--secondary-light), var(--secondary));
   text-align: center;
-  color: #E6F7FF;
+  color: var(--accent);
 }
 
 .baqa-splash img {
   max-width: 420px;
   width: 90%;
-  border-radius: 12px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
   border: 1px solid rgba(42, 212, 245, 0.3);
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  margin-bottom: var(--spacing-md);
+  transition: transform var(--transition-speed) ease, filter var(--transition-speed) ease;
 }
 
 .baqa-splash img:hover {
@@ -102,13 +128,29 @@ h1, h2, h3 {
 
 .baqa-splash h1 {
   color: var(--primary);
-  font-size: 40px;
+  font-size: clamp(2rem, 8vw, 2.75rem); /* Responsive font size */
   text-shadow: 0 0 12px var(--highlight);
-  animation: glow 2s infinite alternate;
   margin-bottom: 0.5rem;
+  animation: glow 2s infinite alternate;
 }
 
-/* Glow animation */
+/* ACCESSIBILITY: Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .baqa-splash h1,
+  div.stButton > button,
+  .baqa-card,
+  .baqa-splash img {
+    animation: none;
+    transition: none;
+  }
+  div.stButton > button:hover,
+  .baqa-card:hover,
+  .baqa-splash img:hover {
+    transform: none;
+  }
+}
+
+/* Animation Definition */
 @keyframes glow {
   from { text-shadow: 0 0 5px var(--primary); }
   to   { text-shadow: 0 0 20px var(--highlight); }
