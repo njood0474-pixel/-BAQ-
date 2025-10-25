@@ -23,6 +23,7 @@
   background-color: var(--white);
   color: var(--secondary);
   border-right: 2px solid var(--primary);
+  padding-top: 2rem; /* Add some space at the top */
 }
 
 [data-testid="stSidebar"] h2,
@@ -38,13 +39,14 @@ div.stButton > button {
   border-radius: 8px;
   border: none;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600; /* Bolder text */
+  padding: 0.75rem 1.5rem; /* Better padding */
   transition: 0.3s ease;
 }
 
 div.stButton > button:hover {
   background-color: var(--highlight);
-  transform: scale(1.05);
+  transform: scale(1.02); /* More subtle hover */
 }
 
 /* ===== Titles ===== */
@@ -59,37 +61,42 @@ h1, h2, h3 {
   border: 1px solid var(--accent);
   border-radius: 14px;
   padding: 18px 22px;
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent */
+  backdrop-filter: blur(5px);
   box-shadow: 0 8px 24px rgba(15, 37, 54, 0.15);
   color: var(--secondary);
-  margin-bottom: 1rem; /* Added margin for spacing */
+  margin-bottom: 1rem;
 }
 
 /* ===== KPI Boxes ===== */
 .kpi-big {
   font-weight: 800;
   color: var(--primary);
-  font-size: 30px;
+  font-size: 32px;
+  text-align: center;
 }
 
 .kpi-sub {
   color: #555;
   font-size: 14px;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-/* ===== Splash Screen (for markdown) ===== */
+/* ===== Splash Screen Wrapper ===== */
 .baqa-splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5vh;
   text-align: center;
 }
 
-.baqa-splash h1 {
-  color: var(--primary);
-  font-size: 40px;
-  text-shadow: 0 0 12px var(--highlight);
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 5px var(--primary); }
-  to   { text-shadow: 0 0 20px var(--highlight); }
+/* Style the video element for the splash screen */
+.baqa-splash video {
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(42, 212, 245, 0.3);
 }
