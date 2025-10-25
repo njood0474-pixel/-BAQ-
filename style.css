@@ -1,10 +1,96 @@
-:root { --primary: #19A7B8; --ink: #0b1c2a; --white:#ffffff; }
-[data-testid="stAppViewContainer"] { background: var(--white); }
-.baqa-title { font-size: 26px; font-weight: 800; color: var(--ink); }
-.baqa-card { border:1px solid #e7eef3; border-radius:14px; padding:16px 18px; background:#ffffff; box-shadow:0 8px 24px rgba(15,37,54,.06); }
-.kpi-big { font-weight:800; color: var(--ink); font-size: 28px; }
-.kpi-sub { color:#556; font-size:12px; }
-.baqa-splash-wrap { min-height: 88vh; display:flex; align-items:center; justify-content:center;
-  background: radial-gradient(60% 70% at 50% 30%, #0e2a3c 0%, #0b1c2a 60%, #07121a 100%);}
-.baqa-splash-card { text-align:center; color:#E6F7FF; }
-.splash-hover img:hover { transform: scale(1.05); filter: drop-shadow(0 0 10px var(--primary)); transition: .2s; }
+/* ====== BAQĀ Core Theme ====== */
+:root {
+  --primary: #19A7B8;      /* Teal Blue (Light accent) */
+  --ink: #0B1C2A;          /* Deep Navy (Main text / background) */
+  --white: #ffffff;
+  --gray: #E7EEF3;
+  --subtext: #4A5568;
+}
+
+/* ====== Global App Background ====== */
+[data-testid="stAppViewContainer"] {
+  background: var(--white);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ====== Title ====== */
+.baqa-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.3px;
+  margin-bottom: 0.25rem;
+}
+
+/* ====== Dashboard Cards ====== */
+.baqa-card {
+  border: 1px solid var(--gray);
+  border-radius: 14px;
+  padding: 16px 18px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(15, 37, 54, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.baqa-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 37, 54, 0.1);
+}
+
+/* ====== KPI Boxes ====== */
+.kpi-big {
+  font-weight: 800;
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.kpi-sub {
+  color: var(--subtext);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* ====== Splash Screen ====== */
+.baqa-splash-wrap {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    60% 70% at 50% 30%,
+    #0e2a3c 0%,
+    #0b1c2a 60%,
+    #07121a 100%
+  );
+}
+
+.baqa-splash-card {
+  text-align: center;
+  color: #E6F7FF;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.baqa-splash-card h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary);
+  text-shadow: 0 0 12px rgba(25,167,184,0.6);
+  margin-bottom: 1rem;
+}
+
+/* ====== Image Hover Effects ====== */
+.splash-hover img {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.splash-hover img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px var(--primary));
+  cursor: pointer;
+}
