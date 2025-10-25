@@ -1,104 +1,42 @@
-/* ===== Global Theme Colors ===== */
-:root {
-  --primary: #19A7B8;        /* الأزرق الفاتح مثل الفيديو */
-  --secondary: #0B1C2A;      /* الأزرق الداكن */
-  --white: #ffffff;
-  --gray: #e8edf1;
-  --accent: #E6F7FF;
-  --highlight: #2ad4f5;
-}
+def splash():
+    st.markdown('<div class="baqa-splash-wrap">', unsafe_allow_html=True)
+    st.markdown('<div class="baqa-splash-card">', unsafe_allow_html=True)
 
-/* ===== App Background ===== */
-[data-testid="stAppViewContainer"] {
-  background: radial-gradient(circle at 50% 30%, var(--secondary), #02111b);
-  color: var(--white);
-  font-family: 'Poppins', sans-serif;
-}
+    video_path = Path("assets/gemini_generated_video.mp4")
+    if video_path.exists():
+        with open(video_path, "rb") as vf:
+            st.video(
+                vf.read(),
+                autoplay=True,
+                muted=True,
+                loop=True,
+            )
+    else:
+        st.markdown(
+            "<div style='color:#fff;font-weight:500;font-size:0.9rem;'>"
+            "Place your intro video at <code>assets/gemini_generated_video.mp4</code>"
+            "</div>",
+            unsafe_allow_html=True
+        )
 
-/* ===== Sidebar ===== */
-[data-testid="stSidebar"] {
-  background-color: var(--white);
-  color: var(--secondary);
-  border-right: 2px solid var(--primary);
-}
+    st.markdown(
+        """
+        <div style="color:#19A7B8;font-size:1rem;font-weight:600;margin-top:1rem;text-shadow:0 0 12px rgba(42,212,245,0.6);">
+            BAQĀ Health Intelligence
+        </div>
+        <div style="color:#fff;font-size:0.8rem;font-weight:400;opacity:0.8;max-width:260px;margin-top:0.5rem;line-height:1.4;">
+            National oncology early-warning layer. Faster triage. Lower avoidable cost. Better survival.
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-[data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] p {
-  color: var(--secondary);
-  font-weight: 600;
-}
+    clicked = st.button("Enter Platform", type="primary", use_container_width=True)
+    if clicked:
+        st.session_state.entered = True
+        try:
+            st.rerun()
+        except AttributeError:
+            st.experimental_rerun()
 
-/* ===== Buttons ===== */
-div.stButton > button {
-  background-color: var(--primary);
-  color: var(--white);
-  border-radius: 8px;
-  border: none;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-div.stButton > button:hover {
-  background-color: var(--highlight);
-  transform: scale(1.05);
-}
-
-/* ===== Titles ===== */
-h1, h2, h3 {
-  color: var(--white);
-  text-align: center;
-  font-weight: 700;
-}
-
-/* ===== Dashboard Cards ===== */
-.baqa-card {
-  border: 1px solid var(--accent);
-  border-radius: 14px;
-  padding: 18px 22px;
-  background-color: var(--white);
-  box-shadow: 0 8px 24px rgba(15, 37, 54, 0.15);
-  color: var(--secondary);
-}
-
-/* ===== KPI Boxes ===== */
-.kpi-big {
-  font-weight: 800;
-  color: var(--primary);
-  font-size: 30px;
-}
-
-.kpi-sub {
-  color: #555;
-  font-size: 14px;
-}
-
-/* ===== Splash Screen ===== */
-.baqa-splash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: radial-gradient(70% 70% at 50% 30%, #0e2a3c, var(--secondary));
-}
-
-.baqa-splash h1 {
-  color: var(--primary);
-  font-size: 40px;
-  text-shadow: 0 0 12px var(--highlight);
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 5px var(--primary); }
-  to   { text-shadow: 0 0 20px var(--highlight); }
-}
-
-/* ===== Video Placeholder ===== */
-.baqa-splash::after {
-  content: "https://github.com/njood0474-pixel/-BAQ-/tree/main/-BAQ-/assets#:~:text=..-,gemini_generated_video.mp4,-Add%20files%20via";
-  position: absolute;
-  bottom: 30px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-}
+    st.markdown('</div></div>', unsafe_allow_html=True)
