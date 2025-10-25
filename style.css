@@ -2,29 +2,26 @@ def splash():
     st.markdown('<div class="baqa-splash-wrap">', unsafe_allow_html=True)
     st.markdown('<div class="baqa-splash-card">', unsafe_allow_html=True)
 
-    video_path = Path("assets/gemini_generated_video.mp4")
-    if video_path.exists():
-        with open(video_path, "rb") as vf:
-            st.video(
-                vf.read(),
-                autoplay=True,
-                muted=True,
-                loop=True,
-            )
+    # Replace video with static image
+    image_path = Path("assets/baqa_cover.png")  # <— your new splash image
+    if image_path.exists():
+        st.image(str(image_path), use_container_width=True)
     else:
         st.markdown(
             "<div style='color:#fff;font-weight:500;font-size:0.9rem;'>"
-            "Place your intro video at <code>assets/gemini_generated_video.mp4</code>"
+            "Place your splash image at <code>assets/baqa_cover.png</code>"
             "</div>",
             unsafe_allow_html=True
         )
 
     st.markdown(
         """
-        <div style="color:#19A7B8;font-size:1rem;font-weight:600;margin-top:1rem;text-shadow:0 0 12px rgba(42,212,245,0.6);">
+        <div style="color:#19A7B8;font-size:1rem;font-weight:600;margin-top:1rem;
+                    text-shadow:0 0 12px rgba(42,212,245,0.6);">
             BAQĀ Health Intelligence
         </div>
-        <div style="color:#fff;font-size:0.8rem;font-weight:400;opacity:0.8;max-width:260px;margin-top:0.5rem;line-height:1.4;">
+        <div style="color:#fff;font-size:0.8rem;font-weight:400;opacity:0.8;
+                    max-width:260px;margin-top:0.5rem;line-height:1.4;">
             National oncology early-warning layer. Faster triage. Lower avoidable cost. Better survival.
         </div>
         """,
