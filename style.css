@@ -96,7 +96,7 @@ h1, h2, h3 {
 
 /* ===== Video Placeholder ===== */
 .baqa-splash::after {
-  content: "Place your intro video at assets/intro_baqa.mp4";
+  content: "intro_baqa.mp4";
   position: absolute;
   bottom: 30px;
   font-size: 14px;
