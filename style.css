@@ -96,7 +96,7 @@ h1, h2, h3 {
 
 /* ===== Video Placeholder ===== */
 .baqa-splash::after {
-  content: "https://github.com/njood0474-pixel/-BAQ-/edit/main/style.css#:~:text=intro_baqa.-,mp4,-.devcontainer";
+  content: "https://github.com/njood0474-pixel/-BAQ-/blob/main/-BAQ-/assets/intro_baqa.mp4#:~:text=%2DBAQ%2D/-,assets,-intro_baqa.mp4";
   position: absolute;
   bottom: 30px;
   font-size: 14px;
